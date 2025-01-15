@@ -4,8 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .travel {
+            font-size: 20px;
+            color: orange;
+        }
+        h1 {
+            font-size: 40px;
+            color: orange;
+        }
+        h6 {
+            font-size: 10px;
+            color: skyblue;
+        }
+        img {
+            width: 220px;
+            height: 200px;
+        }
+        .bili {
+            border: 2px solid rgb(221, 127, 190);
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- 标题 -->
+    <strong><h1>海绵宝宝</h1></strong>
+    <h2>海绵宝宝</h2>
+    <h3>海绵宝宝</h3>
+    <h4>海绵宝宝</h4>
+    <h5>海绵宝宝</h5>
+    <del><h6>海绵宝宝</h6></del>
+    <br>
+    <hr>
+    <br>
+    <!-- 列表 -->
+    <u><h2>旅游</h2></u>
+    <ul class="travel">
+        <li>成都</li>
+        <li>
+            <span>上海</span>
+            <ul>
+                <li>外滩</li>
+                <li>东方明珠</li>
+                <li>迪士尼</li>
+            </ul>
+        </li>
+        <li>西安</li>
+        <li>武汉</li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <!-- 表格 -->
+    <table border="1" width="500" height="100" cellspacing="0">
+    <caption>猫猫幼儿园</caption>
+        <thead height="50" align="center" valign="middle">
+        <tr>
+            <th width="70">姓名</th>
+            <th width="60">性别</th>
+            <th width="50">年龄</th>
+            <th width="70">是否绝育</th>
+        </tr>
+    </thead>
+    <tbody height="200" align="center" valign="middle">
+        <tr>
+            <td>来来</td>
+            <td>男</td>
+            <td>3岁</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>卷卷</td>
+            <td>女</td>
+            <td>2岁</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>胖头鱼</td>
+            <td>男</td>
+            <td>3岁</td>
+            <td>否</td>
+        </tr>
+        <tr>
+            <td>黄毛</td>
+            <td>男</td>
+            <td>6个月</td>
+            <td>否</td>
+        </tr>
+    </tbody>
+    <tfoot height="50" align="center" valign="middle">
+        <tr>
+            <td>总计</td>
+            <td></td>
+            <td></td>
+            <td>4喵</td>
+        </tr>
+    </tfoot>
+    </table>
+    <br>
+    <hr>
+    <br>
+    <!-- 表单 -->
+    <label for="zhanghu">账户：</label>
+    <input id="zhanghu" type="text" name="account" maxlength="10" placeholder="用户名"><br>
+    <label>
+        密码：
+        <input id="mima" type="password" name="psd" maxlength="6" placeholder="密码">
+    </label>
+    <br>
+    性别：
+    <input type="radio" name="gender" value="male" id="nan">
+    <label for="nan">男</label>
+    <label>
+        <input type="radio" name="gender" value="female">女
+    </label><br>
+    爱好：
+    <label>
+        <input type="checkbox" name="hobby" value="smoke">抽烟
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="drink">喝酒
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="perm">烫头
+    </label>
+    <br>
+    <div>其他：</div>
+    <textarea name="other" cols="30" rows="3"></textarea><br>
+    籍贯：
+    <select name="place">
+        <option value="冀">河北</option>
+        <option value="鲁">山东</option>
+        <option value="晋">山西</option>
+        <option value="粤">广东</option>
+        <option value="川">四川</option>
+    </select>
+    <br>
+    <input type="submit" value="确认">
+    <input type="reset" value="重置">
+    <button type="button">检测是否被注册</button>
+    <br>
+    <hr>
+    <br>
+    <img src="./猫猫.jpg" alt="miao">
+    <div class="bili"><a href="https://www.bilibili.com/" target="_self">bilibili</a></div>
 </body>
 </html>
