@@ -1,0 +1,19 @@
+/* id选择器 */
+#Mecky {
+    color: crimson;
+}
+
+/* 兄弟选择器 */
+div~p {
+    color: goldenrod;
+}
+
+/* 子代选择器 */
+div>p>a {
+    color: skyblue;
+}
+
+/* 属性选择器 */
+[title*="o"] {
+    color: rgb(222, 111, 202);
+}

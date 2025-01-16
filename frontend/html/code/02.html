@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice2</title>
+    <style>
+        .leftfix {
+            float: left;
+        }
+        .rightfix {
+            float: right;
+        }
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .container {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .topbar {
+            height: 30px;
+            background-color: #ececec;
+        }
+        .welcome {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+        .topbar-nav .list {
+            height: 30px;
+            line-height: 30px;
+        }
+        .topbar-nav li {
+            float: right;
+        }
+        .topbar-nav a {
+            padding: 0 15px;
+        }
+        .topbar-nav:last-child a {
+            padding-right: 10px;
+        }
+        ul,ol {
+            list-style: none;
+        }
+        body,ul,li,nav {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        .hello {
+            color: #666;
+        }
+        .header {
+            height: 100px;
+        }
+        .bottom {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container clearfix">
+            <div class="welcome leftfix">
+                <span class="hello">Welcome</span>
+            </div>
+            <div class="topbar-nav rightfix">
+                <nav class="list clearfix">
+                    <a href="#">首页</a>
+                    <a href="#">关于</a>
+                    <a href="#">加入我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="header"></div>
+    <section class="container">
+        <div style="font-size: 30px;">文章标题</div>
+        <p>文章内容</p>
+        <p>文章内容</p>
+        <p>文章内容</p>
+        <p>文章内容</p>
+        <p>文章内容</p>
+        <p>文章内容</p>
+    </section>
+    <div class="bottom"></div>
+    <footer class="container clearfix">
+        <div class="leftfix">版权所有 &copy; 2025</div>
+        <div class="rightfix">Author:XXX</div>
+    </footer>
+</body>
+</html>
