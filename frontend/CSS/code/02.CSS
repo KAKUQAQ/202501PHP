@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 动态伪类 */
+a:link {
+    color: orange;
+}
+a:visited {
+    color: gray;
+}
+a:hover {
+    color: skyblue;
+}
+a:active {
+    color: green;
+}
+input:focus {
+    background-color: rgb(243, 204, 222);
+    color: rgb(47, 150, 235);
+}
+button:active {
+    background-color: green;
+}
+/* 盒模型组成 */
+.outer-box {
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+    padding-top: 40px;
+    border: 2px solid black;
+    margin: 50px;
+    background-color: orange;
+}
+.inner-box {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed black;
+    margin-left: 30px;
+    margin-top: 40px;
+    background-color: gray;
+}
+/* 粘性定位 */
+.page-header {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: gray;
+    font-size: 20px;
+}
+.content {
+    height: 200px;
+    overflow: auto;
+}
+.item {
+    background-color: orange;
+}
+.label {
+    background-color: burlywood;
+    font-size: 40px;
+    position: sticky;
+    top: 0px;
+}
+.outer {
+    width: 200px;
+    height: 100px;
+    background-color: gray;
+    position: relative;
+}
+.inner {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: orange;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/* 固定位置 */
+.box1 {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    line-height: 40px;
+    text-align: center;
+    background-color: aliceblue;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+/* 过渡 */
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transition-property: all;
+    transition-duration: 2s;
+}
+.box2:hover {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    transform: rotate3d(1, 1, 5, 45deg);
+    box-shadow: 0px 0px 20px black;
+}
+/* 动画 */
+@keyframes move {
+0% {
+    transform: translateX(0px);
+}
+25% {
+    transform: translateX(50px);
+}
+50% {
+    transform: translateY(50px);
+}
+75% {
+    transform: translateX(-50px);
+}
+100% {
+    transform: translateY(-50px);
+}
+}
+.animations {
+width: 50px;
+height: 50px;
+animation: move 5s infinite;
+background-color: gold;
+border: 1px dashed black;
+border-radius: 25px;
+/* 元素（标签）阴影 */
+box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
