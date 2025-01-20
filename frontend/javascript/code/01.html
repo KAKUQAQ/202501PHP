@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = 100;
+        var num2 = 10;
+        // 加法
+        console.log(num1 + num2);
+        // 减法
+        console.log(num1 - num2);
+        // 乘法
+        console.log(num1 * num2);
+        // 除法
+        console.log(num1 / num2);
+        // 取余
+        console.log(num1 % num2);
+        // 自增自减运算符 相当于当前值+1或者-1
+        var num3 = 20;
+        console.log(++num3);
+        console.log(--num3);
+        // ++在前 先自增再运算，++在后 先运算再自增
+        // 比较运算符
+        // b比较运算符返回布尔值(true/false)
+        console.log(num1 > num2);
+        //==(相等) ===(严格比较数值、类型相等) !=(不等) !==
+        var num4 = '10';
+        console.log(num3 == num4);
+        console.log(num3 === num4);
+        // 赋值运算符
+        // X+=Y 等于 X=X+Y
+        var X = 10;
+        var Y = 10;
+        console.log(X+=Y);
+        
+        // X-=Y 等于 X=X-Y
+        console.log(X-=Y);
+        
+        // X*=Y 等于 X=X*Y
+        console.log(X*=Y);
+        
+        // X/=Y 等于 X=X/Y
+        console.log(X/=Y);
+        
+        // X%=Y 等于 X=X%Y
+        console.log(X%=Y);
+        // 取反运算符
+        var flag = true;
+        console.log(!flag);
+        // 取反为ture
+        console.log(!null);
+        console.log(!undefined);
+        console.log(!0);
+        console.log(!"");
+        console.log(!NaN);
+        console.log(!false);
+        // 且运算符,多个条件满足，任何一个条件不满足，都是false
+        console.log(100 > 10 && 100 > 20 && 100 > 30);
+        // 或运算符,满足一个条件则为真，都不满足才是false
+        console.log(10 < 20 || 10 > 20);
+        // if循环
+        var day = 3; //周四
+        if(day === 0) {
+            console.log("Monday");
+        } else if(day === 1) {
+            console.log("Tusday");
+        } else if(day === 2) {
+            console.log("Wensday");
+        } else if(day === 3) {
+            console.log("Thursday");
+        } else if(day === 4) {
+            console.log("Friday");
+        } else if(day === 5) {
+            console.log("Saturday");
+        } else {
+            console.log("Sunday");
+        }
+
+        var eat = true;
+        var food = "米饭"
+        if(eat) {
+            if(food === "米饭") {
+                console.log("米饭");
+            } else {
+                console.log("面条");
+            }
+        } else {
+            console.log("不吃");
+        }
+        // switch循环
+        switch (day) {
+            case 0:
+                console.log("Mon");
+                break;
+            case 1:
+                console.log("Tus");
+                break;
+            case 2:
+                console.log("Wen");
+                break;
+            case 3:
+                console.log("Thu");
+                break;
+            case 4:
+                console.log("Fir");
+                break;
+            case 5:
+                console.log("Sat");
+                break;
+            default:
+                console.log("Sun");
+                break;
+        }
+        // for循环
+        var sum = 0
+        for (let index = 0; index <= 10; index++) {
+            sum += index
+        }
+        console.log(sum);
+
+        for (let i = 0; i <= 20; i++) {
+            if(i % 2 != 0) {
+                console.log(i);
+            }
+            
+        }
+
+        for (let i = 1; i <= 9; i++) {
+            document.write("<br>")
+            for (let j = 1; j <= i; j++) {
+                sum = i * j;
+                document.write(i,"*",j,"=",sum," ")
+                
+            }
+        }
+
+        // for...in
+        let person = {
+            name: "张三",
+            age: 25,
+            city: "北京"
+        };
+        for (let key in person) {
+            console.log(key + ":" + person[key]);
+            
+        }
+
+        // for...of
+        let fruits = ["苹果","香蕉","橘子"];
+        for (let fruit of fruits) {
+            console.log(fruit);
+            
+        }
+        // while循环
+        var a = 1
+        while (a <= 10) {
+            console.log(a);
+            i++
+        }
+        let count = 0
+        do {
+            console.log("计数：" + count);
+            count++
+        }
+        while (count < 6)
+        // break and continue
+        for (var i = 0; i < 5; i++) {
+            if (i === 3) {
+                break;
+            }
+            console.log(i);
+        }
+        // continue为跳过，跳过当前循环直接进入下次循环
+        for (let i = 0; i < 10; i++) {
+            if (i % 2 ===0) {continue;}
+            console.log(i);
+        }
+    </script>
+</body>
+</html>
