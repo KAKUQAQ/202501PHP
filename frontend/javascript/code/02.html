@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            padding: 50px;
+        }
+        .child {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <a href="https://www.google.com" class="event-object">Google</a>
+    <div class="parent" onclick="alert('Parent Div Click')">
+        <div class="child" onclick="ChildClick(event)">CLICK</div>
+    </div>
+    <p id="output">按键显示</p>
+    <form action="" method="post" id="form-event">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        // 表达式
+        function add(a,b) {
+            return a + b;
+        }
+        let sum = add(10,20);
+        console.log(sum);
+        // 匿名函数
+        let mutiply = function (a,b) {
+            return a * b
+        }
+        console.log(mutiply(10,5));
+        // 箭头函数
+        let divide = (a,b) => a/b
+        console.log(divide(10,2));
+        // 函数参数
+        function sayHello(name = "Traveler") {
+            console.log('你好,' + name + '!');
+        }
+        sayHello();
+        sayHello('张三');
+        // 剩余参数
+        function sumAll(...args) {
+            let sum = 0;
+            for (let arg of args) {
+                sum +=arg;
+            }
+            return sum;
+        }
+        console.log(sumAll(1,2,3,4));
+        // 参数解构
+        function display({name,age}) {
+            console.log("姓名:" + name);
+            console.log("年龄:" + age);
+        }
+        let person = {name:"张三", age:23};
+        display(person);
+        // 返回值
+        function square(num) {
+            return num * num;
+        }
+        console.log(square(5));
+        // 递归
+        // 阶乘
+        function factorial(n) {
+            if (n === 1) return 1;
+            return n * factorial(n - 1);
+        }
+        console.log(factorial(5));
+        // 数组
+        function sumArray(arr) {
+            if (arr.length === 0) {return 0;}
+            return arr[0] + sumArray(arr.slice(1));
+        }
+        const numbers = [1,2,3,4,5,6];
+        console.log(sumArray(numbers));
+        // 闭包
+        function outer() {
+            let count = 0;
+            return function inner() {
+                count++;
+                console.log(count);
+            }
+        }
+        let counter = outer();
+        counter();
+        counter();
+        // 事件处理
+        // 获取键盘按下的值
+        document.addEventListener('keydown', function (event) {
+            const key = event.key;
+            const keyCode = event.code;
+            document.getElementById('output').textContent = `你惊扰了:"${key}" (code:${keyCode})`
+        });
+        // 窗口
+        window.addEventListener('resize', function () {
+            console.log('窗口大小变化');
+        })
+        // 页面加载完成
+        window.addEventListener('load',function () {
+            console.log('页面加载完成');
+        })
+        // 表单
+        let form = document.getElementById('form-event')
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            console.log("提交");
+        })
+        form.addEventListener('change', function () {
+            console.log('表单内容变化');
+        })
+        // 按钮
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function() {
+            alert('点！');
+        });
+        // 移除
+        function clickHandler() {
+            console.log('移除事件');
+        }
+        btn.addEventListener('click', clickHandler);
+        btn.removeEventListener('click', clickHandler);
+        // 事件对象
+        let link = document.querySelector('a');
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log('点击了链接');
+        })
+
+        function ChildClick(event) {
+            alert('Clild Div Click');
+        }
+        // 阻止事件
+        
+    </script>
+</body>
+</html>
