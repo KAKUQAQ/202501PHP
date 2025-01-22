@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .timer {
+            width: 300px;
+            height: 150px;
+            border: 1px dashed black;
+            text-align: center;
+            border-radius: 40px;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            width: 60px;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 40px;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-left" style="flex: 4;"></div>
+        <div class="timer" style="flex: 2;">
+            <h1 id="timer">0</h1>
+            <button id="start">开始</button>
+            <button id="stop">停止</button>
+            <button id="reset">重置</button>
+        </div>
+        <div class="section-right" style="flex: 4;"></div>
+    </div>
+
+    <script src="./timer.js"></script>
+</body>
+</html>
