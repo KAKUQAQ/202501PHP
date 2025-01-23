@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片位置和大小变换</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease; 
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <img id="myImage" src="./image.jpg" alt="点击变换位置和大小">
+
+    <script>
+        // 获取图片元素
+        const image = document.getElementById('myImage');
+
+        // 为图片绑定点击事件
+        image.addEventListener('mouseover', () => {
+            // 生成随机的位置
+            const newX = Math.random() * (window.innerWidth - image.offsetWidth);
+            const newY = Math.random() * (window.innerHeight - image.offsetHeight);
+
+            // 生成随机的大小
+            const newSize = 50 + Math.random() * 200; // 50px 到 250px 的随机宽度
+
+            // 更新图片的位置和大小
+            image.style.left = `${newX}px`;
+            image.style.top = `${newY}px`;
+            image.style.width = `${newSize}px`;
+        });
+    </script>
+</body>
+</html>
