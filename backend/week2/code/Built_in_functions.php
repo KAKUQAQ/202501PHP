@@ -41,23 +41,23 @@ $num3 = 3;
 $sum = $num1 + $num2 + $num3;
 $arr = [$num1, $num2, $num3];
 $str3 = implode("+", $arr);
-echo $str3 . "=" . $sum. "<br>";
+echo $str3 . "=" . $sum . "<br>";
 //trim 移除两侧的空白字符
 $str4 = "  hahahaha   ";
 echo trim($str4) . "<br>";
 $str5 = "##hahahaha##";
 echo $str5 . "<br>";
-$trimStr = trim($str5,"#");
+$trimStr = trim($str5, "#");
 echo $trimStr . "<br>";
 
 //数组处理函数
 // count
-$arr = array(1,2,3,4,5);
+$arr = array(1, 2, 3, 4, 5);
 $count = count($arr);
 echo $count . "<br>";
 // array_push 将元素插入末尾
-$arr1 = array(1,2,3);
-array_push($arr1, 4,5,6);
+$arr1 = array(1, 2, 3);
+array_push($arr1, 4, 5, 6);
 var_dump($arr1);
 echo "<br>";
 // array_pop 删除最后一个元素
@@ -73,8 +73,8 @@ $unshiftValue = array_unshift($arr1, 0);
 var_dump($arr1);
 echo "<br>";
 // array_merge 合并一个或多个数组
-$arr2 = array(1,2,3);
-$arr3 = array(4,5,6);
+$arr2 = array(1, 2, 3);
+$arr3 = array(4, 5, 6);
 $mergeValue = array_merge($arr2, $arr3);
 var_dump($mergeValue);
 echo "<br>";
@@ -84,23 +84,23 @@ $mergeArr = array_merge($student1, $student2);
 var_dump($mergeArr);
 echo "<br>";
 // array_unique 去重
-$arr4 = array(1,2,2,2,2,3,4,5,5,5,5);
+$arr4 = array(1, 2, 2, 2, 2, 3, 4, 5, 5, 5, 5);
 $uniqueArr = array_unique($arr4);
 var_dump($uniqueArr);
 echo "<br>";
 // array_reverse 倒序返回
-$arr5 = array(1,2,3,4,5,6,7,8,9);
+$arr5 = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 $reverseArr = array_reverse($arr5);
 var_dump($reverseArr);
 echo "<br>";
 // sort对数组升序
 // rsort对数组降序
-$arr6 = array(4,5,6,2,8,7,1,9);
+$arr6 = array(4, 5, 6, 2, 8, 7, 1, 9);
 sort($arr6);
 var_dump($arr6);
 echo "<br>";
 // shuffle 将数组顺序打乱
-$arr7 = array(1,2,3,4,5,6,7,8,9);
+$arr7 = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 shuffle($arr7);
 var_dump($arr7);
 echo "<br>";
@@ -112,28 +112,28 @@ if (array_key_exists("name", $student)) {
     echo "no name" . "<br>";
 }
 // in_array 检查是否存在指定值
-$arr8 = array(1,2,3,4,5);
-if(in_array(9, $arr8)) {
+$arr8 = array(1, 2, 3, 4, 5);
+if (in_array(9, $arr8)) {
     echo "yes" . "<br>";
 } else {
     echo "no" . "<br>";
 }
 // array_search 搜索给定值，成功返回键名，失败返回false
-$arr9 = array(1,2,3,4,5);
+$arr9 = array(1, 2, 3, 4, 5);
 $key = array_search(3, $arr9);
 echo $key . "<br>";
 // array_keys 返回数组中部分或所有键名
-$arr10 = array("a"=>1,"b"=>2,"c"=>3,"d"=>4);
+$arr10 = array("a" => 1, "b" => 2, "c" => 3, "d" => 4);
 $keys = array_keys($arr10);
 var_dump($keys);
 echo "<br>";
 // array_values 返回数组中的所有值
-$arr11 = array("a"=>1,"b"=>2,"c"=>3,"d"=>4);
+$arr11 = array("a" => 1, "b" => 2, "c" => 3, "d" => 4);
 $values = array_values($arr10);
 var_dump($values);
 echo "<br>";
 // array_slice 返回数组中的一段
-$arr12 = array("a","b","c","d","e");
+$arr12 = array("a", "b", "c", "d", "e");
 $sliceArr = array_slice($arr12, 2, 3);
 var_dump($sliceArr);
 echo "<br>";
@@ -149,7 +149,7 @@ echo $content . "<br>";
 $data = "Hello World!";
 // 如果文件不存在会创建文件
 // 如果文件存在会覆盖文件，如果flags是FILE_APPEND会在文件末尾追加
-file_put_contents("test.txt", $data,FILE_APPEND);
+file_put_contents("test.txt", $data, FILE_APPEND);
 echo "<br>";
 
 //file_exists()判断文件是否存在
@@ -212,7 +212,7 @@ echo $time . "<br>";
 
 // json处理函数
 // json_encode 将变量进行json编码
-$arr13 = array("name"=> "Tom", "age" => 20);
+$arr13 = array("name" => "Tom", "age" => 20);
 $json = json_encode($arr13);
 echo $json . "<br>";
 // json_decode 将json格式转为PHP变量
@@ -238,7 +238,7 @@ echo max(0, 140, 30, 118, 204) . "<br>";
 //min
 echo min(0, 140, 30, 118, 204) . "<br>";
 //rand 随机生成
-echo rand(1000,9999) . "<br>";
+echo rand(1000, 9999) . "<br>";
 //round 对浮点四舍五入
 echo round(0.68, 1) . "<br>";
 //sqrt 返回平方根
