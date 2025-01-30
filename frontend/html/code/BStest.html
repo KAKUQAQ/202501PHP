@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>游戏导航栏</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #333; /* 浅黑色背景 */
+            position: relative; /* 让下拉菜单相对其定位 */
+            z-index: 10;
+        }
+        .navbar-brand {
+            width: 200px; /* 预留 Logo 位置 */
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            max-height: 50px;
+            width: auto;
+        }
+        .navbar-nav {
+            flex-grow: 1; /* 让导航栏占满 Logo 和 注册 | 登录 之间的空间 */
+            justify-content: space-between;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color 0.3s;
+            padding: 0 30px; /* 增大间距 */
+        }
+        .navbar-nav .nav-link:hover {
+            color: gold !important;
+        }
+        .auth-container {
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .auth-links {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .auth-links:hover {
+            color: gold;
+        }
+
+        /* 下拉菜单修正 */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        .dropdown-menu {
+            width: 100vw; /* 让下拉菜单宽度等于整个屏幕 */
+            left: 0; /* 让菜单紧贴屏幕左侧 */
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
+            border: none;
+            position: fixed; /* 让菜单不受父元素影响，始终全屏 */
+            top: 60px; /* 确保与导航栏对齐 */
+            z-index: 9;
+            padding: 10px 0;
+        }
+        .dropdown-item {
+            color: white !important;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 10px 0;
+        }
+        .dropdown-item:hover {
+            background-color: gold;
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Logo"> <!-- 替换 logo.png -->
+        </a>
+
+        <!-- 折叠菜单按钮（小屏幕） -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item"><a class="nav-link" href="#">首页</a></li>
+
+                <!-- 游戏特色（下拉菜单） -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="gameFeatures" role="button">
+                        游戏特色
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">游戏机制</a></li>
+                        <li><a class="dropdown-item" href="#">基础玩法</a></li>
+                    </ul>
+                </li>
+
+                <!-- 职业（下拉菜单） -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="professions" role="button">
+                        职业
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">战士</a></li>
+                        <li><a class="dropdown-item" href="#">法师</a></li>
+                        <li><a class="dropdown-item" href="#">萨满</a></li>
+                        <li><a class="dropdown-item" href="#">刺客</a></li>
+                        <li><a class="dropdown-item" href="#">牧师</a></li>
+                        <li><a class="dropdown-item" href="#">猎人</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="#">活动</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Q&A</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">在线客服</a></li>
+            </ul>
+
+            <!-- 右侧 注册 | 登录 -->
+            <div class="auth-container">
+                <a href="#" class="auth-links">注册</a>
+                <span class="text-white">|</span>
+                <a href="#" class="auth-links">登录</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
