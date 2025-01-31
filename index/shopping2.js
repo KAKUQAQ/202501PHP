@@ -1,5 +1,3 @@
-let cart = [];
-
 function showDetail(image, title, price) {
     document.getElementById('detail-image').src = image;
     document.getElementById('detail-title').innerText = title;
@@ -10,32 +8,23 @@ function showDetail(image, title, price) {
 function addToCart() {
     let title = document.getElementById('detail-title').innerText;
     let price = parseFloat(document.getElementById('detail-price').innerText.replace('￥', ''));
+    
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push({ title, price });
-    updateCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("商品已加入购物车！");
 }
 
-function updateCart() {
-    let cartContainer = document.getElementById('cart-items');
-    cartContainer.innerHTML = '';
-    let totalPrice = 0;
-    cart.forEach((item, index) => {
-        totalPrice += item.price;
-        cartContainer.innerHTML += `<div class='cart-item'>${item.title} - ￥${item.price}</div>`;
-    });
-    document.getElementById('cart-count').innerText = cart.length;
-    document.getElementById('total-price').innerText = totalPrice;
-}
-
-function showCart() {
-    document.getElementById('cart').style.display = 'block';
+function buyNow() {
+    addToCart();
+    window.location.href = "cart.html";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    let urlParams = new URLSearchParams(window.location.search);
-    let username = urlParams.get("username") || localStorage.getItem("username");
+    let username = localStorage.getItem("username"); // 获取用户名
 
     if (username) {
         document.getElementById("auth-container").innerHTML = `<span style="color: white;">欢迎回来 ${username}</span>`;
     }
 });
-
