@@ -9,8 +9,9 @@ class Database {
         global $db;
         $this->conn = $db;
     }
+
     public static function getInstance() {
-        if (self::$instance) {
+        if (!self::$instance) {
             self::$instance = new Database();
         }
         return self::$instance;

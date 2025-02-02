@@ -23,7 +23,6 @@ class Product
             return false;
         }
     }
-
     public function getAllProducts() {
         $sql = "SELECT * FROM products";
         $stmt = $this->conn->query($sql);

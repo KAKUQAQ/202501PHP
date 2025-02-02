@@ -1,6 +1,6 @@
 <?php
 
-require_once("../models/Product.php");
+require_once __DIR__ . '/../models/Product.php';
 
 class ProductController
 {
@@ -25,7 +25,7 @@ class ProductController
 
     private function uploadImage($file)
     {
-        $targetDir = "../uploads/";
+        $targetDir = __DIR__ . '/../uploads/';
         $targetFile = $targetDir . basename($file["name"]);
         $uploadOk = 1;
 

@@ -15,5 +15,9 @@ $controller = $_GET['controller'] ?? 'Product';
 $action = $_GET['action'] ?? 'list';
 
 //创建控制器实例并调用对应方法
-$controller = new $controller() . 'Controller';
+$controllerName = $controller . 'Controller'; // 拼接出控制器的类名
+$controller = new $controllerName(); // 实例化控制器对象
+
 $controller->{$action}();
+
+
