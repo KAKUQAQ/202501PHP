@@ -9,6 +9,9 @@ class Product
     //初始化数据库连接
     public function __construct() {
         $this->conn = Database::getInstance()->getConnection();
+        if ($this->conn === null) {
+            die('数据库连接失败');
+        }
     }
     public function addProduct($name, $price, $description, $image) {
         $sql = "INSERT INTO products (name, price, description, image) VALUES (:name, :price, :description, :image)";

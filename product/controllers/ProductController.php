@@ -10,14 +10,14 @@ class ProductController
     }
     public function list() {
         $product = $this->productModel->getAllProducts();
-        include '../views/product_list.php';
+        include __DIR__ .'/../views/product_list.php';
     }
 
     public function detail() {
         $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
         $product = $this->productModel->getProductById($id);
         if ($product) {
-            include '../views/product_detail.php';
+            include __DIR__ .'/../views/product_detail.php';
         } else {
             echo "商品不存在";
         }
@@ -76,13 +76,13 @@ class ProductController
             $image = $this->uploadImage($_FILES["image"]);
             if ($image) {
                 if ($this->productModel->addProduct($name, $price, $description, $image)) {
-                    header("location: index.php?controller=Product&action=list");
+                    header("location: ../index.php?controller=Product&action=list");
                 } else {
                     echo "商品添加失败";
                 }
             }
         } else {
-            include '../views/add_product.php';
+            include __DIR__ .'/../views/add_product.php';
         }
     }
 
@@ -103,7 +103,7 @@ class ProductController
                 echo "商品更新失败";
             }
         } else {
-            include '../views/update_product.php';
+            include __DIR__ .'/../views/update_product.php';
         }
     }
     public function delete() {
@@ -119,7 +119,7 @@ class ProductController
         $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
         $product = $this->productModel->getProductById($id);
         if ($product) {
-            include '../views/purchase_product.php';
+            include __DIR__ .'/../views/purchase_product.php';
         } else {
             echo "商品不存在";
         }
