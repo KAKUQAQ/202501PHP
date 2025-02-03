@@ -29,9 +29,9 @@
     <p><strong>图片：</strong></p>
     <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
     <div style="margin-top: 20px;">
-        <a href="../index.php?controller=Product&action=purchase&id=<?php echo $product['id']; ?>">购买</a>
-        <a href="../index.php?controller=Product&action=update&id=<?php echo $product['id']; ?>">更新</a>
-        <a href="../index.php?controller=Product&action=list">返回商品列表</a>
+        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=purchase&id=<?php echo $product['id']; ?>">购买</a>
+        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=update&id=<?php echo $product['id']; ?>">更新</a>
+        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=list">返回商品列表</a>
     </div>
 </div>
 </body>

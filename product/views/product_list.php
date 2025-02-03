@@ -45,10 +45,10 @@
                     <td><?php echo htmlspecialchars($product['description']); ?></td>
                     <td><img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" style="max-width: 100px"></td>
                     <td>
-                        <a href="../index.php?controller_Product&action=detail&id=<?php echo $product['id']; ?>">查看</a>
-                        <a href="../index.php?controller_Product&action=update&id=<?php echo $product['id']; ?>">更新</a>
-                        <a href="../index.php?controller_Product&action=delete&id=<?php echo $product['id']; ?>">删除</a>
-                        <a href="../index.php?controller_Product&action=purchase&id=<?php echo $product['id']; ?>">购买</a>
+                        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=detail&id=<?php echo $product['id']; ?>">查看</a>
+                        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=update&id=<?php echo $product['id']; ?>">更新</a>
+                        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=delete&id=<?php echo $product['id']; ?>">删除</a>
+                        <a href="http://localhost/202501PHP/product/index.php?controller=Product&action=purchase&id=<?php echo $product['id']; ?>">购买</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -60,6 +60,6 @@
     </tbody>
 </table>
 <div style="text-align: center; margin-top: 20px">
-    <a href="../index.php?controller=Product&action=add">添加商品</a>
+    <a href="http://127.0.0.1/202501PHP/product/index.php?controller=Product&action=add">添加商品</a>
 </div>
 </html>

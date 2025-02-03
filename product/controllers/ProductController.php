@@ -9,7 +9,7 @@ class ProductController
         $this->productModel = new Product();
     }
     public function list() {
-        $product = $this->productModel->getAllProducts();
+        $products = $this->productModel->getAllProducts();
         include __DIR__ .'/../views/product_list.php';
     }
 
@@ -59,7 +59,7 @@ class ProductController
             return false;
         } else {
             if (move_uploaded_file($file["tmp_name"], $targetFile)) {
-                echo "The file ". basename( $file["name"]). " has been uploaded.";
+//                echo "The file ". basename( $file["name"]). " has been uploaded.";
                 return $targetFile;
             } else {
                 echo "Sorry, there was an error uploading your file.";
@@ -76,7 +76,7 @@ class ProductController
             $image = $this->uploadImage($_FILES["image"]);
             if ($image) {
                 if ($this->productModel->addProduct($name, $price, $description, $image)) {
-                    header("location: ../index.php?controller=Product&action=list");
+                    header("location: /202501PHP/product/index.php?controller=Product&action=list");
                 } else {
                     echo "商品添加失败";
                 }
@@ -98,7 +98,7 @@ class ProductController
                 $image = $this->uploadImage($_FILES["image"]);
             }
             if ($image && $this->productModel->updateProduct($id, $name, $price, $description, $image)) {
-                header("location: index.php?controller=Product&action=list");
+                header("location: /202501PHP/product/index.php?controller=Product&action=list");
             } else {
                 echo "商品更新失败";
             }
@@ -109,7 +109,7 @@ class ProductController
     public function delete() {
         $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
         if ($this->productModel->deleteProduct($id)) {
-            header("location: index.php?controller=Product&action=list");
+            header("location: /202501PHP/product/index.php?controller=Product&action=list");
         } else {
             echo "商品不存在";
         }

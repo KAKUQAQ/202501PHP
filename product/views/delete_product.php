@@ -24,7 +24,7 @@
     <p><strong>名称：</strong><?php echo htmlspecialchars($product['name']); ?></p>
     <p><strong>价格：</strong><?php echo (float)$product['price']; ?></p>
     <p><strong>描述：</strong><?php echo htmlspecialchars($product['description']); ?></p>
-    <form action="../index.php?controller=Product&action=update&id=<?php echo $product['id']; ?>" method="post">
+    <form action=" ../index.php?controller=Product&action=update&id=<?php echo $product['id']; ?>" method="post">
         <div style="margin-top: 20px;">
             <button type="submit">确认删除</button>
             <a href="../index.php?controller=Product&action=list">取消</a>
