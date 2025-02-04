@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../models/Product.php';
+require_once BASE_PATH . 'models/Product.php';
 
 class ProductController
 {
@@ -10,14 +10,14 @@ class ProductController
     }
     public function list() {
         $products = $this->productModel->getAllProducts();
-        include __DIR__ .'/../views/product_list.php';
+        include BASE_PATH .'views/product_list.php';
     }
 
     public function detail() {
         $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
         $product = $this->productModel->getProductById($id);
         if ($product) {
-            include __DIR__ .'/../views/product_detail.php';
+            include BASE_PATH .'views/product_detail.php';
         } else {
             echo "商品不存在";
         }
@@ -25,7 +25,7 @@ class ProductController
 
     private function uploadImage($file)
     {
-        $targetDir = __DIR__ . '/../uploads/';
+        $targetDir = BASE_PATH . 'uploads/';
         $targetFile = $targetDir . basename($file["name"]);
         $uploadOk = 1;
 
@@ -76,13 +76,13 @@ class ProductController
             $image = $this->uploadImage($_FILES["image"]);
             if ($image) {
                 if ($this->productModel->addProduct($name, $price, $description, $image)) {
-                    header("location: /202501PHP/product/index.php?controller=Product&action=list");
+                    header("location: index.php");
                 } else {
                     echo "商品添加失败";
                 }
             }
         } else {
-            include __DIR__ .'/../views/add_product.php';
+            include BASE_PATH .'views/add_product.php';
         }
     }
 
@@ -98,18 +98,18 @@ class ProductController
                 $image = $this->uploadImage($_FILES["image"]);
             }
             if ($image && $this->productModel->updateProduct($id, $name, $price, $description, $image)) {
-                header("location: /202501PHP/product/index.php?controller=Product&action=list");
+                header("location: index.php");
             } else {
                 echo "商品更新失败";
             }
         } else {
-            include __DIR__ .'/../views/update_product.php';
+            include BASE_PATH .'views/update_product.php';
         }
     }
     public function delete() {
         $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
         if ($this->productModel->deleteProduct($id)) {
-            header("location: /202501PHP/product/index.php?controller=Product&action=list");
+            header("location: index.php");
         } else {
             echo "商品不存在";
         }
@@ -119,7 +119,7 @@ class ProductController
         $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
         $product = $this->productModel->getProductById($id);
         if ($product) {
-            include __DIR__ .'/../views/purchase_product.php';
+            include BASE_PATH .'views/purchase_product.php';
         } else {
             echo "商品不存在";
         }

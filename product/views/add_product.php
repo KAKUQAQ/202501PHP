@@ -4,44 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>添加商品</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
         }
-        form {
+        .gradient-bg {
+            background: linear-gradient(90deg, #00a1d6, #ff6699);
+        }
+        .form-container {
             max-width: 500px;
-            margin: auto;
-            padding: 1em;
-            border: 1px solid #ccc;
-            border-radius: 1em;
-        }
-        div + div {
-            margin-top: 1em;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
-<h1>添加商品</h1>
-<form action="../index.php?controller=Product&action=add" method="post" enctype="multipart/form-data">
-    <div>
-        <label for="name">商品名称：</label>
-        <input type="text" name="name" id="name" required>
+
+<!-- 顶部导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark gradient-bg px-3">
+    <a class="navbar-brand fw-bold" href="#">猫猫商店</a>
+</nav>
+
+<!-- 添加商品表单 -->
+<div class="container d-flex justify-content-center">
+    <div class="form-container">
+        <h2 class="text-center">添加商品</h2>
+        <form action="index.php?controller=Product&action=add" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">商品名称：</label>
+                <input type="text" class="form-control" name="name" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">价格：</label>
+                <input type="number" class="form-control" name="price" id="price" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">商品描述：</label>
+                <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">图片：</label>
+                <input type="file" class="form-control" name="image" id="image" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4">提交</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="price">价格：</label>
-        <input type="number" name="price" id="price" required>
-    </div>
-    <div>
-    <label for="description">商品描述：</label>
-    <textarea name="description" id="description" required></textarea>
-    </div>
-    <div>
-        <label for="image">图片：</label>
-        <input type="file" name="image" id="image" required>
-    </div>
-    <div>
-        <button type="submit">提交</button>
-    </div>
-</form>
+</div>
+
+<!-- 底部导航 -->
+<footer class="text-center text-light py-3 mt-4 gradient-bg">
+    <p>© 2025 猫猫商店 | <a href="#" class="text-light">联系我们</a></p>
+</footer>
+
 </body>
 </html>

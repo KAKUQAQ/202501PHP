@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../config/config.php';
+require_once BASE_PATH . 'config/config.php';
 
 class Database {
     private static $instance = null;
@@ -13,6 +13,8 @@ class Database {
         } catch (PDOException $e) {
             die('数据库连接失败: ' . $e->getMessage());
         }
+//        global $db;
+//        $this->conn = $db;
     }
 
     public static function getInstance() {
