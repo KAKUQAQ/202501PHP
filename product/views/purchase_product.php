@@ -40,10 +40,10 @@
 <div class="container d-flex justify-content-center">
     <div class="purchase-container">
         <h2 class="text-center">购买商品</h2>
+        <img src="<?php echo htmlspecialchars($product['image']); ?>" class="product-img" alt="<?php echo htmlspecialchars($product['name']); ?>">
         <p><strong>名称：</strong><?php echo htmlspecialchars($product['name']); ?></p>
         <p><strong>价格：</strong><span class="text-danger">¥<?php echo (float)$product['price']; ?></span></p>
         <p><strong>描述：</strong><?php echo htmlspecialchars($product['description']); ?></p>
-        <img src="<?php echo htmlspecialchars($product['image']); ?>" class="product-img" alt="<?php echo htmlspecialchars($product['name']); ?>">
 
         <form action="index.php?controller=Product&action=handlePurchase&id=<?php echo $product['id']; ?>" method="post">
             <div class="mb-3">

@@ -25,8 +25,8 @@ class ProductController
 
     private function uploadImage($file)
     {
-        $targetDir = BASE_PATH . 'uploads/';
-        $targetFile = $targetDir . basename($file["name"]);
+        $targetDir = 'uploads/';
+        $targetFile = BASE_PATH . $targetDir . uniqid() . $file['name'];
         $uploadOk = 1;
 
         $imgFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
@@ -60,7 +60,7 @@ class ProductController
         } else {
             if (move_uploaded_file($file["tmp_name"], $targetFile)) {
 //                echo "The file ". basename( $file["name"]). " has been uploaded.";
-                return $targetFile;
+                return $targetDir . $file["name"];
             } else {
                 echo "Sorry, there was an error uploading your file.";
                 return false;
@@ -130,7 +130,8 @@ class ProductController
         $product = $this->productModel->getProductById($id);
         if ($product && $_SERVER["REQUEST_METHOD"] == "POST") {
             $quantity = (int)$_POST["quantity"];
-            echo "您已成功购买 {$quantity} 个商品：{$product['name']}";
+//            echo "您已成功购买 {$quantity} 个商品：{$product['name']}";
+            include BASE_PATH .'views/handle_purchase.php';
         } else {
             echo "购买失败";
         }

@@ -61,8 +61,8 @@
             <p class="text-center fs-4 text-muted">没有商品</p>
         <?php endif; ?>
     </div>
-    <div style="text-align: center; margin-top: 20px">
-        <a href="index.php?controller=Product&action=add">添加商品</a>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index.php?controller=Product&action=add" style="text-decoration: none; color: #595ca8">添加商品</a>
     </div>
 </div>
 
