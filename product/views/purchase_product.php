@@ -22,7 +22,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-top: 50px;
         }
-        .product-img {
+        .purchase-product-img {
             max-width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
@@ -40,7 +40,7 @@
 <div class="container d-flex justify-content-center">
     <div class="purchase-container">
         <h2 class="text-center">购买商品</h2>
-        <img src="<?php echo htmlspecialchars($product['image']); ?>" class="product-img" alt="<?php echo htmlspecialchars($product['name']); ?>">
+        <img src="<?php echo htmlspecialchars($product['image']); ?>" class="purchase-product-img" alt="<?php echo htmlspecialchars($product['name']); ?>">
         <p><strong>名称：</strong><?php echo htmlspecialchars($product['name']); ?></p>
         <p><strong>价格：</strong><span class="text-danger">¥<?php echo (float)$product['price']; ?></span></p>
         <p><strong>描述：</strong><?php echo htmlspecialchars($product['description']); ?></p>

@@ -22,7 +22,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-top: 50px;
         }
-        .product-img {
+        .update-product-img {
             max-width: 100px;
             border-radius: 5px;
             display: block;
@@ -58,7 +58,7 @@
                 <label for="image" class="form-label">上传新图片：</label>
                 <input type="file" class="form-control" name="image" id="image">
                 <p class="mt-2">当前图片：</p>
-                <img src="<?php echo htmlspecialchars($product['image']); ?>" class="product-img" alt="当前图片">
+                <img src="<?php echo htmlspecialchars($product['image']); ?>" class="update-product-img" alt="当前图片">
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary px-4">提交更新</button>

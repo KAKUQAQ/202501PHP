@@ -12,13 +12,4 @@ class Product extends Model
     use HasFactory;
     protected $fillable = ['name', 'description', 'price', 'image'];
 
-    public function getAllProducts(): Collection
-    {
-        return $this->all();
-    }
-
-    public function getProductById(int $id)
-    {
-        return $this->find($id);
-    }
 }

@@ -27,6 +27,40 @@
             height: 200px;
             object-fit: cover;
         }
+        .product-container {
+            max-width: 600px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .detail-product-img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .form-container {
+            max-width: 500px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .update-container {
+            max-width: 500px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .update-product-img {
+            max-width: 100px;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
