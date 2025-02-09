@@ -14,7 +14,7 @@
                     <p class="card-text text-danger">¥{{ number_format($product->price,2) }}</p>
                     <div class="d-flex justify-content-center gap-2">
                         <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-outline-primary">查看</a>
-                        <a href="index.php?controller=Product&action=purchase&id=<?php echo $product['id']; ?>" class="btn btn-sm btn-primary">购买</a>
+                        <a href="{{ route('orders.index') }}" class="btn btn-sm btn-primary">购买</a>
                         <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-outline-primary">更新</a>
 
                     </div>

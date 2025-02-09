@@ -7,7 +7,7 @@
     <div class="container d-flex justify-content-center">
         <div class="product-container">
             <h2 class="text-center">{{ $product->name }}</h2>
-            <img src="{{ $product->image }}" class="detail-product-img" alt="{{ $product->name }}">
+            <img src="{{ asset('storage/' . $product->image) }}" class="detail-product-img" alt="{{ $product->name }}">
             <p><strong>名称：</strong>{{ $product->name }}</p>
             <p><strong>价格：</strong><span class="text-danger">¥{{number_format($product->price,2)}}</span></p>
             <p><strong>描述：</strong>{{ $product->description }}</p>
