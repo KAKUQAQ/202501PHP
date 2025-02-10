@@ -41,7 +41,16 @@ class OrderController extends Controller
 
     public function index()
     {
-        $orders = Order::latest()->get();
+        $orders = Order::where('status', '!=', 'completed')->get();
         return view('orders.index', compact('orders'));
     }
+    public function confirmPurchase(Order $order)
+    {
+        $order->status = 'completed';
+        $order->save();
+
+        // 购买成功后重定向到商品列表页
+        return redirect()->route('products.index')->with('success', '购买成功！');
+    }
+
 }

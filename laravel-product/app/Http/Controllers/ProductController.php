@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller {
 
@@ -54,6 +55,12 @@ class ProductController extends Controller {
         $product->price = $validated['price'];
         $product->description = $validated['description'];
         if ($request->hasFile('image')) {
+            // 删除旧图片（如果存在）
+            if ($product->image) {
+                Storage::disk('public')->delete($product->image);
+            }
+
+            // 存储新图片
             $imagePath = $request->file('image')->store('products', 'public');
             $product->image = $imagePath;
         }
@@ -65,10 +72,14 @@ class ProductController extends Controller {
 
     public function destroy(Product $product): RedirectResponse
     {
-        if ($product->delete()) {
-            return redirect()->route('products.index');
+        if ($product->image) {
+            Storage::disk('public')->delete($product->image);
         }
-        return redirect()->back();
+        if ($product->delete()) {
+            return redirect()->route('products.index')->with('success', '商品已删除');
+        }
+
+        return redirect()->back()->with('error', '删除失败');
     }
 }
 

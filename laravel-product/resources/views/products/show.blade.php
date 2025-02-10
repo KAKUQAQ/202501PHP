@@ -13,7 +13,7 @@
             <p><strong>描述：</strong>{{ $product->description }}</p>
 
             <div class="d-flex justify-content-center gap-3 mt-4">
-                <a href="index.php?controller=Product&action=purchase&id=<?php echo $product['id']; ?>" class="btn btn-primary">购买</a>
+                <a href="{{ route('orders.index') }}" class="btn btn-primary">购买</a>
                 <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning">更新</a>
                 <a href="{{ route('products.index') }}" class="btn btn-secondary">返回</a>
             </div>

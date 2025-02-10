@@ -9,7 +9,7 @@
         <div class="update-container">
             <h2 class="text-center">更新商品</h2>
             @include('layouts._form_errors')
-            <form action="{{ route('products.edit', $product->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('products.update', $product->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
@@ -32,17 +32,31 @@
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary px-4">提交更新</button>
-                </div>
-            </form>
-            <form action="{{ route('products.destroy', $product->id) }}" method="post" style="margin-top: 10px">
-                @csrf
-                @method('DELETE')
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary px-4">删除</button>
+                    <a href="javascript:void(0);" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">删除</a>
                     <a href="{{ route('products.index') }}" class="btn btn-secondary px-4">返回</a>
                 </div>
             </form>
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">删除商品确认</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    数据删除后无法恢复, 你确定要删除吗?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">删除</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 @endsection

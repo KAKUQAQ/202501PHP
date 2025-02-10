@@ -11,3 +11,4 @@ Route::resource('products', ProductController::class);
 Route::post('/purchase', [OrderController::class, 'purchase'])->name('purchase');
 Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::post('/orders/{order}/confirmPurchase', [OrderController::class, 'confirmPurchase'])->name('orders.confirmPurchase');
